@@ -1,4 +1,5 @@
 let grid = [
+    [2, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -7,8 +8,7 @@ let grid = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 3],
 ];
 
 function toggleCell(x, y) {
@@ -34,6 +34,10 @@ function drawGrid() {
             let cell = row.insertCell(j);
             if (grid[i][j] == 1) {
                 cell.style.backgroundColor = "black";
+            } else if (grid[i][j] == 2) {
+                cell.style.backgroundColor = "red";
+            } else if (grid[i][j] == 3) {
+                cell.style.backgroundColor = "green";
             }
             cell.addEventListener("click", event => {
                 toggleCell(i, j);
